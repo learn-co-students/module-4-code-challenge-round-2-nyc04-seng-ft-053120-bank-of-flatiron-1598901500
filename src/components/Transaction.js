@@ -1,9 +1,10 @@
 import React from "react";
 
 const Transaction = (props) => {
-  const {date, description, category, amount} = props.transaction
+  const {id, date, description, category, amount} = props.transaction
+  
   return (
-    <tr>
+    <tr onClick={() => props.handleRemoveTransaction(id)}>
       <td>{date}</td>
       <td>{description}</td>
       <td>{category}</td>

@@ -9,6 +9,7 @@ class AccountContainer extends Component {
   state = {
     transactions: [],
     query: "",
+    sort: "date"
   }
 
   componentDidMount() {
@@ -34,6 +35,19 @@ class AccountContainer extends Component {
     })))
   }
 
+  handleRemoveTransaction = (transactionId) => {
+    fetch((URL + '/' + transactionId), {
+      method: 'DELETE',
+    })
+    .then(resp => resp.json())
+    .then(data => {
+      const updatedTransactions = this.state.transactions.filter(transaction => transaction.id === transactionId ? null : transaction)
+      this.setState(prevState => ({
+        transactions: updatedTransactions
+      }))
+    })
+  }
+
   handleSearch = (event) => {
     event.persist();
     this.setState(prevState => ({
@@ -41,9 +55,25 @@ class AccountContainer extends Component {
     }))
   }
 
+  handleFilter = (event) => {
+    event.persist();
+    this.setState(prevState => ({
+      sort: event.target.textContent
+    }))
+  }
+
   renderTransactions = () => {
     const query = this.state.query.toLowerCase()
-    return this.state.transactions.filter(transaction => transaction.description.toLowerCase().includes(query))
+    const sort = this.state.sort.toLowerCase()
+
+    const filteredTransactions = this.state.transactions.filter(transaction => (
+      transaction.description.toLowerCase().includes(query)
+      ))
+
+    const sortedTransactions = filteredTransactions.sort((t1, t2) => (
+      t1[sort] > t2[sort]) ? 1 : -1
+      )
+    return sortedTransactions
   }
 
   render() {
@@ -51,7 +81,7 @@ class AccountContainer extends Component {
       <div>
         <Search handleSearch={this.handleSearch} />
         <AddTransactionForm handleNewTransaction={this.handleNewTransaction} />
-        <TransactionsList transactions={this.renderTransactions()} />
+        <TransactionsList transactions={this.renderTransactions()} handleFilter={this.handleFilter} handleRemoveTransaction={this.handleRemoveTransaction} />
       </div>
     );
   }
