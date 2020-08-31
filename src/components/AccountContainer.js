@@ -7,7 +7,8 @@ class AccountContainer extends Component {
 
   state = {
     transactions: [],
-    search: ''
+    search: '',
+    sort: ''
   }
 
   componentDidMount(){
@@ -43,12 +44,36 @@ class AccountContainer extends Component {
     })
   }
 
+  sort = (sortType) => {
+    this.setState({
+      sort: sortType
+    })
+  }
+
+  handleDelete = (id) => {
+    fetch(`http://localhost:6001/transactions/${id}`, {
+      method: "DELETE"
+    })
+    .then(res => res.json())
+    .then((deletedObj) => {
+      let newList = this.state.transactions.filter(transaction => transaction.id !== id)
+      this.setState({
+        transactions: newList
+      })
+    })
+  }
+
   render() {
     return (
       <div>
-        <Search getSearchTerm={this.getSearchTerm} />
+        <Search getSearchTerm={this.getSearchTerm} sort={this.sort} />
         <AddTransactionForm addNewTransaction={this.addNewTransaction}/>
-        <TransactionsList searchTerm={this.state.search} transactions={this.state.transactions} />
+        <TransactionsList 
+          searchTerm={this.state.search} 
+          transactions={this.state.transactions} 
+          sortType={this.state.sort}
+          handleDelete={this.handleDelete}
+        />
       </div>
     );
   }

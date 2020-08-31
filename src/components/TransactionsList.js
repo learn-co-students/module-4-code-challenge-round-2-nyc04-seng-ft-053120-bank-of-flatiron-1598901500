@@ -4,13 +4,21 @@ import Transaction from "./Transaction";
 const TransactionsList = (props) => {
   
   let renderTransactions = () => {
-    let filteredTransactions = props.transactions.filter(transaction => {
-      if (transaction.description.toLowerCase().includes(props.searchTerm.toLowerCase())) {
-        return transaction
+    let filteredTransactions = props.transactions
+    .filter(transaction => {
+      return transaction.description.toLowerCase().includes(props.searchTerm.toLowerCase())
+    })
+    .sort((transaction1, transaction2) => {
+      if (props.sortType === "description") {
+        return transaction1.description.localeCompare(transaction2.description)
+      } else if (props.sortType === "category") {
+        return transaction1.category.localeCompare(transaction2.category)
+      } else {
+        return true
       }
     })
 
-    return filteredTransactions.map(transaction => <Transaction key={transaction.id} transaction={transaction} />)
+    return filteredTransactions.map(transaction => <Transaction key={transaction.id} transaction={transaction} handleDelete={props.handleDelete} />)
   }
 
   return (
@@ -28,6 +36,9 @@ const TransactionsList = (props) => {
           </th>
           <th>
             <h3 className="ui center aligned header">Amount</h3>
+          </th>
+          <th>
+            <h3 className="ui center aligned header">Delete</h3>
           </th>
         </tr>
         {renderTransactions()}
