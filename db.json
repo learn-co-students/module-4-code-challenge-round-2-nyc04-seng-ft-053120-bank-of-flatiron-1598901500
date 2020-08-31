@@ -71,11 +71,18 @@
       "amount": -116.39
     },
     {
-      "date": "2020-08-28",
+      "date": "2020-08-29",
+      "description": "Tacos",
+      "category": "Food",
+      "amount": -8,
+      "id": 14
+    },
+    {
+      "date": "2020-08-29",
       "description": "Hot Air Balloon Ride",
       "category": "Entertainment",
-      "amount": "-500",
-      "id": 13
+      "amount": -500,
+      "id": 15
     }
   ]
 }

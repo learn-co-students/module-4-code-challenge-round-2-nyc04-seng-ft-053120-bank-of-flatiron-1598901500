@@ -33,8 +33,10 @@ class AccountContainer extends Component {
 
   // Handle the user's input as they type in the new transaction form, update this.state.form to reflect this
   handleTransactionInput = (e) => {
-    const name = e.target.name,
+    let name = e.target.name,
       value = e.target.value;
+
+    if (name === "amount") value = parseInt(value);
 
     const form = {
       ...this.state.form,
