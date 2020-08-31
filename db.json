@@ -83,6 +83,27 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "date": "2020-09-04",
+      "description": "Dinner at McDonald's",
+      "category": "Food",
+      "amount": 15,
+      "id": 14
+    },
+    {
+      "date": "2020-08-12",
+      "description": "Hair dye",
+      "category": "Cosmetics",
+      "amount": 29,
+      "id": 15
+    },
+    {
+      "date": "2020-08-19",
+      "description": "Bike Ride",
+      "category": "Recreation",
+      "amount": 23.55,
+      "id": 16
     }
   ]
 }
