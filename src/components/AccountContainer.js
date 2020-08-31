@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import TransactionsList from "./TransactionsList";
 import Search from "./Search";
 import AddTransactionForm from "./AddTransactionForm";
+import Sort from "./Sort";
 
 class AccountContainer extends Component {
   state = {
@@ -84,6 +85,51 @@ class AccountContainer extends Component {
     this.setState({ transactions });
   };
 
+  // Handles sort based on the criteria user selected
+  handleSort = (e) => {
+    const criteria = e.target.value;
+
+    const transactions = [...this.state.transactions].sort(
+      (transactionA, transactionB) => {
+        if (
+          transactionA[criteria].toLowerCase() <
+          transactionB[criteria].toLowerCase()
+        )
+          return -1;
+        if (
+          transactionA[criteria].toLowerCase() >
+          transactionB[criteria].toLowerCase()
+        )
+          return 1;
+        return 0;
+      }
+    );
+
+    this.setState({ transactions });
+  };
+
+  // Handles transaction deletion, takes in a transaction object, make delete request, update state
+  handleDeleteTransaction = (transaction) => {
+    const transactionId = transaction.id;
+
+    fetch("http://localhost:6001/transactions/" + transactionId, {
+      method: "DELETE",
+      credentials: "include",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(transaction),
+    })
+      .then((response) => response.json())
+      .then((_) => {
+        const transactions = this.state.transactions.filter(
+          (t) => t.id !== transactionId
+        );
+        this.setState({ transactions });
+      });
+  };
+
   render() {
     return (
       <div>
@@ -97,7 +143,11 @@ class AccountContainer extends Component {
           handleTransactionInput={this.handleTransactionInput}
           handleTransactionSubmit={this.handleTransactionSubmit}
         />
-        <TransactionsList transactions={this.state.transactions} />
+        <Sort handleSort={this.handleSort} />
+        <TransactionsList
+          transactions={this.state.transactions}
+          handleDeleteTransaction={this.handleDeleteTransaction}
+        />
       </div>
     );
   }

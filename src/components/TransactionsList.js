@@ -1,10 +1,16 @@
 import React from "react";
 import Transaction from "./Transaction";
 
-const TransactionsList = ({ transactions }) => {
+const TransactionsList = ({ transactions, handleDeleteTransaction }) => {
   const renderTransactions = () => {
     return transactions.map((transaction) => {
-      return <Transaction key={transaction.id} transaction={transaction} />;
+      return (
+        <Transaction
+          key={transaction.id}
+          transaction={transaction}
+          handleDeleteTransaction={handleDeleteTransaction}
+        />
+      );
     });
   };
 
