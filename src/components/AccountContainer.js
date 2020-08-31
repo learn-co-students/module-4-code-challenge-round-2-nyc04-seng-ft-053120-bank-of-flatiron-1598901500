@@ -72,7 +72,7 @@ class AccountContainer extends Component {
       });
   };
 
-  // Handles user's input inot searchbar. Only transactions with a description matching the search term should be shown in the transactions table.
+  // Handles user's input in searchbar. Only transactions with a description matching the search term should be shown in the transactions table.
   handleSearchInput = (e) => {
     const search = e.target.value;
 
@@ -136,7 +136,6 @@ class AccountContainer extends Component {
         <Search
           search={this.state.search}
           handleSearchInput={this.handleSearchInput}
-          handleSearchSubmit={this.handleSearchSubmit}
         />
         <AddTransactionForm
           form={this.state.form}
