@@ -83,6 +83,41 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "date": "2020-08-31",
+      "description": "Paycheck from Flatiron",
+      "category": "Income",
+      "amount": "10",
+      "id": 13
+    },
+    {
+      "date": "2020-08-31",
+      "description": "Paycheck from Google",
+      "category": "Income",
+      "amount": "1000",
+      "id": 14
+    },
+    {
+      "date": "2020-08-31",
+      "description": "Paycheck from Microsoft",
+      "category": "Income",
+      "amount": "1000",
+      "id": 15
+    },
+    {
+      "date": "2020-08-31",
+      "description": "McDonald's",
+      "category": "Food",
+      "amount": "-20",
+      "id": 16
+    },
+    {
+      "date": "2020-08-31",
+      "description": "Clothes",
+      "category": "Fashion",
+      "amount": "-20",
+      "id": 17
     }
   ]
 }
