@@ -1,7 +1,7 @@
 import React from "react";
 
 const Transaction = (props) => {
-  const { date, description, category, amount } = props.transaction;
+  const { id, date, description, category, amount } = props.transaction;
 
   return (
     <tr>
@@ -9,6 +9,7 @@ const Transaction = (props) => {
       <td>{description}</td>
       <td>{category}</td>
       <td>{amount}</td>
+      <td><button className="ui inverted red button" onClick={() => props.deleteTransaction(id)}>X</button></td>
     </tr>
   );
 };
