@@ -32,12 +32,23 @@ class AccountContainer extends Component {
     let transactionArray = this.state.transactions
     return transactionArray.filter(transaction => this.state.search ? transaction.description.toLowerCase().includes(searchTerm) : true)
   }
+
+  addOneTransaction = (singleTransactionFromForm) => {
+    let allTransctions =[singleTransactionFromForm,...this.state.transactions]
+    this.setState({
+      transactions: allTransctions
+    })
+  }
+
+
+
+
   render() {
     let transactions = this.searchFilter()
     return (
       <div>
         <Search searchTerm={this.state.search} searchChange={this.handleSearchChange}/>
-        <AddTransactionForm />
+        <AddTransactionForm addOneTransaction={this.addOneTransaction}/>
         <TransactionsList transactions = {transactions}/>
       </div>
     );

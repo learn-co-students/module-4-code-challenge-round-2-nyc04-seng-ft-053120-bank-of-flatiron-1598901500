@@ -83,6 +83,13 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "date": "2020-09-05",
+      "description": "Final Fantasy concert",
+      "category": "Music",
+      "amount": "29.99",
+      "id": 13
     }
   ]
 }
