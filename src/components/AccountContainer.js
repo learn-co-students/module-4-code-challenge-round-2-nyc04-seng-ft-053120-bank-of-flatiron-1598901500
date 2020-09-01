@@ -4,12 +4,28 @@ import Search from "./Search";
 import AddTransactionForm from "./AddTransactionForm";
 
 class AccountContainer extends Component {
+
+  state ={
+    transactions : []
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:6001/transactions")
+    .then(resp => resp.json())
+    .then(dataObj => {
+      this.setState({
+        transactions:dataObj
+      })
+    })
+  }
+
   render() {
+    let transactions = this.state.transactions
     return (
       <div>
         <Search />
         <AddTransactionForm />
-        <TransactionsList />
+        <TransactionsList transactions = {transactions}/>
       </div>
     );
   }
