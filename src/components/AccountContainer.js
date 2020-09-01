@@ -6,6 +6,7 @@ import AddTransactionForm from "./AddTransactionForm";
 class AccountContainer extends Component {
 
   state ={
+    search:"",
     transactions : []
   }
 
@@ -19,11 +20,23 @@ class AccountContainer extends Component {
     })
   }
 
+  handleSearchChange = (evt) =>{
+    this.setState({
+      search:evt.target.value
+    })
+  }
+
+//trying things a little differently.
+  searchFilter = () => {
+    let searchTerm = this.state.search.toLowerCase()
+    let transactionArray = this.state.transactions
+    return transactionArray.filter(transaction => this.state.search ? transaction.description.toLowerCase().includes(searchTerm) : true)
+  }
   render() {
-    let transactions = this.state.transactions
+    let transactions = this.searchFilter()
     return (
       <div>
-        <Search />
+        <Search searchTerm={this.state.search} searchChange={this.handleSearchChange}/>
         <AddTransactionForm />
         <TransactionsList transactions = {transactions}/>
       </div>
