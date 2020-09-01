@@ -10,29 +10,14 @@ class AccountContainer extends Component {
     sort: 'None',
   };
 
+  // Fetch GET request for transactions
   componentDidMount() {
     fetch('http://localhost:6001/transactions')
       .then((response) => response.json())
       .then((transactions) => this.setState({ transactions: transactions }));
   }
 
-  searchFilter = (event) => {
-    this.setState({ filter: event.target.value });
-  };
-
-  liveSearch = () => {
-    if (this.state.filter !== '') {
-      return this.state.transactions.filter((transaction) =>
-        transaction.description
-          .toLowerCase()
-          .includes(this.state.filter.toLowerCase())
-      );
-    }
-    return this.state.transactions;
-  };
-
-  handleSort = (sortParam) => this.setState({ sort: sortParam });
-
+  // Fetch POST request to add new transactions
   addTransaction = (transaction) => {
     this.setState({ transactions: [...this.state.transactions, transaction] });
 
@@ -52,6 +37,35 @@ class AccountContainer extends Component {
       });
   };
 
+  // Set sort category in State
+  handleSort = (sortParam) => this.setState({ sort: sortParam });
+
+  // Set search query terms in State
+  searchFilter = (event) => {
+    this.setState({ filter: event.target.value });
+  };
+
+  // Filter transactions by search query
+  liveSearch = () => {
+    if (this.state.filter !== '') {
+      return this.state.transactions.filter((transaction) =>
+        transaction.description
+          .toLowerCase()
+          .includes(this.state.filter.toLowerCase())
+      );
+    }
+    return this.state.transactions;
+  };
+
+  // Delete transaction and update record in State
+  deleteTransaction = (id) => {
+    this.setState((prevState) => ({
+      transactions: prevState.transactions.filter(
+        (transaction) => transaction.id !== id
+      ),
+    }));
+  };
+
   render() {
     return (
       <div>
@@ -68,6 +82,7 @@ class AccountContainer extends Component {
           sort={this.state.sort}
           handleSort={this.handleSort}
           sortTransactions={this.sortTransactions}
+          deleteTransaction={this.deleteTransaction}
         />
       </div>
     );

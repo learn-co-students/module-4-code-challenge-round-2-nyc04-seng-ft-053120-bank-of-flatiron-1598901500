@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 
 export class Transaction extends Component {
-  handleSubmit(event) {
-    event.preventDefault();
-    this.props.addTransaction(this.state);
-  }
-
   render() {
     const { date, description, category, amount } = this.props.transaction;
 
@@ -16,7 +11,11 @@ export class Transaction extends Component {
         <td>{category}</td>
         <td>{amount}</td>
         <td>
-          <button className="ui button" type="submit">
+          <button
+            className="ui button"
+            type="submit"
+            onClick={(event) => this.props.fetchDelete(this.props.transaction.id, event)}
+          >
             Delete Transaction
           </button>
         </td>

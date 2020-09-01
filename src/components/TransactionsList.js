@@ -2,14 +2,7 @@ import React, { Component } from 'react';
 import Transaction from './Transaction';
 
 class TransactionsList extends Component {
-  filterText = this.props.filter;
-
-  renderTransactions = () => {
-    return this.sortTransactions(this.props.liveSearch()).map((transaction) => {
-      return <Transaction key={transaction.id} transaction={transaction} />;
-    });
-  };
-
+  // Sort transactions by category
   sortTransactions = (transactions) => {
     switch (this.props.sort) {
       case 'Date':
@@ -21,10 +14,40 @@ class TransactionsList extends Component {
       case 'Category':
         return transactions.sort((a, b) => (a.category > b.category ? 1 : -1));
       case 'Amount':
-        return transactions.sort((a, b) => (a.price > b.price ? 1 : -1));
+        return transactions.sort((a, b) => (a.amount < b.amount ? 1 : -1));
       default:
         return transactions;
     }
+  };
+
+  // Fetch Delete Request
+  fetchDelete = (id, event) => {
+    event.preventDefault();
+    this.props.deleteTransaction(id);
+
+    fetch(`http://localhost:6001/transactions/${id}`, {
+      method: 'DELETE',
+    })
+      .then((response) => {
+        console.log('Success:', response);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  };
+
+  // Create table of transactions
+  renderTransactions = () => {
+    return this.sortTransactions(this.props.liveSearch()).map((transaction) => {
+      return (
+        <Transaction
+          key={transaction.id}
+          transaction={transaction}
+          id={transaction.id}
+          onDelete={this.onDelete}
+        />
+      );
+    });
   };
 
   render() {
