@@ -1,12 +1,17 @@
 import React from "react";
 
-const Transaction = () => {
+const Transaction = ({ transactionObj, handleDelete }) => {
+  const { id, date, description, category, amount } = transactionObj;
+
   return (
     <tr>
-      <td>{"your code here..."}</td>
-      <td>{"your code here..."}</td>
-      <td>{"your code here..."}</td>
-      <td>{"your code here..."}</td>
+      <td>{date}</td>
+      <td>{description}</td>
+      <td>{category}</td>
+      <td>{amount}</td>
+      <td className="delete-transaction" onClick={() => handleDelete(id)}>
+        Delete
+      </td>
     </tr>
   );
 };

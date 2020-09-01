@@ -5,8 +5,8 @@
 
 input {
   width: 25% !important;
-  margin-right: 0.25em!important;
-  margin-left: 0.25em!important;
+  margin-right: 0.25em !important;
+  margin-left: 0.25em !important;
 }
 
 body {
@@ -19,9 +19,54 @@ body {
   text-align: center;
 }
 
-
 .App-header {
   background-color: #222;
   padding: 20px;
   color: white;
+}
+
+#description-sort {
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+#description-sort:hover {
+  background: rgb(189, 228, 255);
+  transform: scale(1.1);
+}
+
+#description-sort:active {
+  background: rgb(111, 185, 238);
+}
+
+#category-sort {
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+#category-sort:hover {
+  background: rgb(227, 255, 182);
+  transform: scale(1.1);
+}
+
+#category-sort:active {
+  background: rgb(189, 236, 112);
+}
+.delete-transaction {
+  margin: 4px;
+  padding: 10px;
+  color: white;
+  background-color: rgb(255, 80, 80);
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.delete-transaction:hover {
+  background-color: rgb(170, 55, 55);
+  transform: scale(1.1);
+}
+
+.delete-transaction:active {
+  transform: scale(1);
+  background-color: rgb(253, 15, 15);
 }
