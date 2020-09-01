@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 
 export class Transaction extends Component {
-
   handleSubmit(event) {
     event.preventDefault();
     this.props.addTransaction(this.state);
   }
 
   render() {
-    const { date, description, category, amount} = this.props.transaction;
+    const { date, description, category, amount } = this.props.transaction;
 
     return (
       <tr>
@@ -23,7 +22,7 @@ export class Transaction extends Component {
         </td>
       </tr>
     );
-  };
-};
+  }
+}
 
 export default Transaction;

@@ -1,33 +1,36 @@
 import React, { Component } from 'react';
-import Transaction from "./Transaction";
+import Transaction from './Transaction';
 
 class TransactionsList extends Component {
-
   filterText = this.props.filter;
 
+  // renderTransactions = () => {
+  //   return this.props.liveSearch().map((transaction) => {
+  //     return <Transaction key={transaction.id} transaction={transaction} />;
+  //   });
+  // };
+
   renderTransactions = () => {
-    return this.props.liveSearch().map((transaction) => {
+    return this.sortTransactions( this.props.liveSearch() ).map((transaction) => {
       return <Transaction key={transaction.id} transaction={transaction} />;
     });
   };
 
-  removeTransaction = (deletedTransaction) => {
-    this.setState({
-      transactions: this.state.transactions.filter(
-        (transaction) => transaction.id !== deletedTransaction.id
-      ),
-    });
-
-    fetch(`http://localhost:6001/transactions/${deletedTransaction.id}`, {
-      method: 'DELETE',
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log('Success:', data);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
+  sortTransactions = (transactions) => {
+    switch (this.props.sort) {
+      case 'Date':
+        return transactions.sort((a, b) => (a.date > b.date ? 1 : -1));
+      case 'Description':
+        return transactions.sort((a, b) =>
+          a.description > b.description ? 1 : -1
+        );
+      case 'Category':
+        return transactions.sort((a, b) => (a.category > b.category ? 1 : -1));
+      case 'Amount':
+        return transactions.sort((a, b) => (a.price > b.price ? 1 : -1));
+      default:
+        return transactions;
+    }
   };
 
   render() {
@@ -36,16 +39,36 @@ class TransactionsList extends Component {
         <tbody>
           <tr>
             <th>
-              <h3 className="ui center aligned header">Date</h3>
+              <h3
+                className="ui center aligned header"
+                onClick={() => this.props.handleSort('Date')}
+              >
+                Date
+              </h3>
             </th>
             <th>
-              <h3 className="ui center aligned header">Description</h3>
+              <h3
+                className="ui center aligned header"
+                onClick={() => this.props.handleSort('Description')}
+              >
+                Description
+              </h3>
             </th>
             <th>
-              <h3 className="ui center aligned header">Category</h3>
+              <h3
+                className="ui center aligned header"
+                onClick={() => this.props.handleSort('Category')}
+              >
+                Category
+              </h3>
             </th>
             <th>
-              <h3 className="ui center aligned header">Amount</h3>
+              <h3
+                className="ui center aligned header"
+                onClick={() => this.props.handleSort('Amount')}
+              >
+                Amount
+              </h3>
             </th>
           </tr>
           {this.renderTransactions()}
@@ -53,6 +76,6 @@ class TransactionsList extends Component {
       </table>
     );
   }
-};
+}
 
 export default TransactionsList;
