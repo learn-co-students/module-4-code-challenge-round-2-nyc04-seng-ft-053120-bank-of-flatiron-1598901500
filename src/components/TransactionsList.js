@@ -4,14 +4,8 @@ import Transaction from './Transaction';
 class TransactionsList extends Component {
   filterText = this.props.filter;
 
-  // renderTransactions = () => {
-  //   return this.props.liveSearch().map((transaction) => {
-  //     return <Transaction key={transaction.id} transaction={transaction} />;
-  //   });
-  // };
-
   renderTransactions = () => {
-    return this.sortTransactions( this.props.liveSearch() ).map((transaction) => {
+    return this.sortTransactions(this.props.liveSearch()).map((transaction) => {
       return <Transaction key={transaction.id} transaction={transaction} />;
     });
   };
