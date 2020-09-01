@@ -3,11 +3,32 @@ import Transaction from "./Transaction";
 
 class TransactionsList extends Component {
 
+  filterText = this.props.filter;
+
   renderTransactions = () => {
-    return this.props.transactions.map(transaction => {
-      return <Transaction key={transaction.date} transaction={transaction} />
+    return this.props.liveSearch().map((transaction) => {
+      return <Transaction key={transaction.id} transaction={transaction} />;
+    });
+  };
+
+  removeTransaction = (deletedTransaction) => {
+    this.setState({
+      transactions: this.state.transactions.filter(
+        (transaction) => transaction.id !== deletedTransaction.id
+      ),
+    });
+
+    fetch(`http://localhost:6001/transactions/${deletedTransaction.id}`, {
+      method: 'DELETE',
     })
-  }
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+  };
 
   render() {
     return (
@@ -31,7 +52,7 @@ class TransactionsList extends Component {
         </tbody>
       </table>
     );
-  };
+  }
 };
 
 export default TransactionsList;

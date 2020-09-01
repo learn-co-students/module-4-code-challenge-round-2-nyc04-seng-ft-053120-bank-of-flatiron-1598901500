@@ -7,7 +7,7 @@ class AccountContainer extends Component {
   state = {
     transactions: [],
     filter: '',
-    sort: 'none',
+    sort: 'None',
   };
 
   componentDidMount() {
@@ -16,16 +16,18 @@ class AccountContainer extends Component {
       .then((transactions) => this.setState({ transactions: transactions }));
   }
 
-  filterTransactions = () => {
-    if (this.state.filter !== '') {
-      return this.state.transactions.filter(
-        (transaction) => transaction.description === this.state.filter
-      );
-    }
-    return this.state.transactions;
+  searchFilter = (event) => {
+    this.setState({filter: event.target.value }); 
   };
 
-  handleFilter = (filterParam) => this.setState({ filter: filterParam });
+  liveSearch = () => {
+    if (this.state.filter !== '') {
+      return this.state.transactions.filter((transaction) =>
+        transaction.description.toLowerCase().includes(this.state.filter.toLowerCase())
+      );
+    };
+    return this.state.transactions;
+  };
 
   handleSort = (sortParam) => this.setState({ sort: sortParam });
 
@@ -56,48 +58,27 @@ class AccountContainer extends Component {
       },
       body: JSON.stringify(transaction),
     })
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         console.log('Success:', data);
       })
       .catch((error) => {
         console.error('Error:', error);
       });
   };
-
-  removeTransaction = (deletedTransaction) => {
-    this.setState({
-      transactions: this.state.transactions.filter(
-        (transaction) => transaction.id !== deletedTransaction.id
-      ),
-    });
-
-    fetch(`http://localhost:6001/transactions/${deletedTransaction.id}`, {
-      method: 'DELETE',
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Success:', data);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-  };
-
-  // displayTransactions = () => {
-  //   this.setState({ transactions: this.transactions })
-  // }
 
   render() {
     return (
       <div>
         <Search
+          currentState={this.state}
           filter={this.state.filter}
-          handleFilter={this.handleFilter}
-          filterTransactions={this.filterTransactions}
+          searchFilter={this.searchFilter}
+          liveSearch={this.liveSearch}
         />
         <AddTransactionForm addTransaction={this.addTransaction} />
         <TransactionsList
+          liveSearch={this.liveSearch}
           transactions={this.state.transactions}
           removeTransaction={this.removeTransaction}
           sort={this.state.sort}

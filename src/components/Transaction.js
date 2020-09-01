@@ -8,7 +8,7 @@ export class Transaction extends Component {
   }
 
   render() {
-    const { date, description, category, amount, id } = this.props.transaction;
+    const { date, description, category, amount} = this.props.transaction;
 
     return (
       <tr>
@@ -16,9 +16,11 @@ export class Transaction extends Component {
         <td>{description}</td>
         <td>{category}</td>
         <td>{amount}</td>
-        <button className="ui button" type="submit" >
-          Delete Transaction
-        </button>
+        <td>
+          <button className="ui button" type="submit">
+            Delete Transaction
+          </button>
+        </td>
       </tr>
     );
   };
