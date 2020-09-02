@@ -3,24 +3,8 @@ import Transaction from "./Transaction";
 
 const TransactionsList = (props) => {
 
-  const [transactions, setTransactions] = useState([]);
-
-  useEffect(() => {
-    console.log(transactions)
-    fetchTransactions()
-  }, []);
-
-  const fetchTransactions = () => {
-    fetch("http://localhost:6001/transactions")
-      .then(res => res.json())
-      .then(transactionArray => {
-        console.log(transactionArray)
-        setTransactions(transactionArray)
-      })
-  }
-
   const renderTransactions = () => {
-    return transactions.map(transaction => {
+    return props.transactions.map(transaction => {
       return <Transaction key={transaction.id} transaction={transaction} />
     })
   }

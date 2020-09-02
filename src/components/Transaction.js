@@ -3,7 +3,7 @@ import React from "react";
 const Transaction = (props) => {
 
   const { id, date, description, category, amount } = props.transaction
-  console.log(props)
+
   return (
     <tr>
       <td>{date}</td>

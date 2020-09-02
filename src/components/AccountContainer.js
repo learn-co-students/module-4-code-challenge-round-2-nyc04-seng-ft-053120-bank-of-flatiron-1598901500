@@ -9,25 +9,32 @@ class AccountContainer extends Component {
     transactions: []
   }
 
-  // fetchTransactions = () => {
-  //   fetch("http://localhost:6001/transactions")
-  //     .then(res => res.json())
-  //     .then(transactions => {
-  //       console.log(transactions)
-  //     })
-  // }
+  fetchTransactions = () => {
+    fetch("http://localhost:6001/transactions")
+      .then(res => res.json())
+      .then(transactions => {
+        this.setState({
+          transactions: transactions
+        })
+      })
+  }
 
-  // componentDidMount() {
-  //   console.log(this.state)
-  //   this.fetchTransactions()
-  // }
+  componentDidMount() {
+    this.fetchTransactions()
+  }
+
+  handleAddTransaction = (newTransaction) => {
+    this.setState({
+      transactions: [... this.state.transactions, newTransaction]
+    })
+  }
 
   render() {
     return (
       <div>
         <Search />
-        <AddTransactionForm />
-        <TransactionsList />
+        <AddTransactionForm addTransaction={this.handleAddTransaction} />
+        <TransactionsList transactions={this.state.transactions} />
       </div>
     );
   }
