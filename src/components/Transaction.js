@@ -23,12 +23,11 @@ const Transaction = (props) => {
       <td>{amount}</td>
       <td>
         <button 
-        className="ui icon button"
+        className="ui purple basic icon button"
         onClick= {handleClick}
         > 
         <i className=" violet trash alternative icon"> </i> 
         </button>
-        <button className="ui purple basic button">Edit</button>
       </td>
     </tr>
   );

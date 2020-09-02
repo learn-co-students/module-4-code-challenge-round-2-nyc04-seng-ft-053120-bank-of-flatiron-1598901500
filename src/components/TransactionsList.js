@@ -8,9 +8,9 @@ const TransactionsList = (props) => {
   return (
     <table className="ui celled striped padded table">
       <tbody>
-        <tr>
-          <th>
-            <h3 className="ui center aligned header">Date</h3>
+        <tr >
+          <th >
+            <h3 className="ui purple center aligned header">Date</h3>
           </th>
           <th>
             <h3 className="ui center aligned header">Description</h3>
@@ -22,7 +22,7 @@ const TransactionsList = (props) => {
             <h3 className="ui center aligned header">Amount</h3>
           </th>
           <th>
-            <h3 className="ui center aligned header">Edit</h3>
+            <h3 className="ui center aligned header">Delete</h3>
           </th>
         </tr>
         { renderTransactions }
