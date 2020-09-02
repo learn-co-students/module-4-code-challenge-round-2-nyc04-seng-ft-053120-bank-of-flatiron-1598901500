@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 
 class AddTransactionForm extends Component {
+  //set state of form
   state = {
     date: "",
     description: "",
@@ -9,22 +10,23 @@ class AddTransactionForm extends Component {
     amount: ""
   }
 
-//handles changes done to the key value pairs 
+//function to handle the event of onCHANGE to equal the event's target's name : event.target.value
 handleChange = (event) => {
   this.setState({
     [event.target.name]: event.target.value
   })
 }
 
-handleSubmit = (e) => {
-  e.preventDefault()
+//function to handle the event of SUBMIT
+handleSubmit = (event) => {
+  //event prevent default not necesary because it looks better without it
   let newTransaction = {
     date: this.state.date,
     description: this.state.description,
     category: this.state.category,
     amount: this.state.amount
   }
-
+  //fetch, POST to save variable of newTransaction from above
   fetch("http://localhost:6001/transactions", {
     method: "POST",
     headers: {
@@ -32,6 +34,7 @@ handleSubmit = (e) => {
     },
     body: JSON.stringify(newTransaction)
   })
+  //use Helper function coming from AccountContainer to add new stringified objet to the existing array of transactions.
   .then(r => r.json())
   .then((newTransaction) => {
     this.props.addTransact(newTransaction)
