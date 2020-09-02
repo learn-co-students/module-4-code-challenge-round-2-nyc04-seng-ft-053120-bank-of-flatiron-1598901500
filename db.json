@@ -83,6 +83,48 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "date": "2020-09-02",
+      "description": "Lets git lit",
+      "category": "Food",
+      "amount": 0,
+      "id": 13
+    },
+    {
+      "date": "2020-09-10",
+      "description": "drinks",
+      "category": "food",
+      "amount": 0,
+      "id": 14
+    },
+    {
+      "date": "2020-09-11",
+      "description": "asdf",
+      "category": "asdf",
+      "amount": 0,
+      "id": 15
+    },
+    {
+      "date": "2020-09-11",
+      "description": "lit",
+      "category": "food",
+      "amount": 0,
+      "id": 16
+    },
+    {
+      "date": "2020-09-11",
+      "description": "new",
+      "category": "new",
+      "amount": 0,
+      "id": 17
+    },
+    {
+      "date": "2020-09-04",
+      "description": "hope this works",
+      "category": "new tran",
+      "amount": 0,
+      "id": 18
     }
   ]
 }

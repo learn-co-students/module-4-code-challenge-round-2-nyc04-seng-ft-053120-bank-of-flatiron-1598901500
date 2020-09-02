@@ -22,13 +22,22 @@ class AccountContainer extends Component {
     this.transactionsData()
   }
   
+  updateStatetrans = (obj) => {
+    this.setState((previousTrans) => ({
+       transactions: [obj, ...previousTrans.transactions]
+    }) )
+  }
+  
+
+
+  
   
   render() {
-    // console.log(this.state)
+  //  console.log("from the A.C ", this.state)
     return (
       <div>
         <Search />
-        <AddTransactionForm />
+        <AddTransactionForm newTran={this.updateStatetrans}/>
         <TransactionsList transactions={this.state.transactions}/>
       </div>
     );
