@@ -6,7 +6,8 @@ import AddTransactionForm from "./AddTransactionForm";
 class AccountContainer extends Component {
 
   state = {
-    transactions: []
+    transactions: [],
+    search: ""
   }
 
   componentDidMount(){
@@ -28,11 +29,21 @@ class AccountContainer extends Component {
       transactions: arrOfTransactions
     })
   }
+//sending down changeSearch to child to get user input to be filtered by description so we can update state
+  changeSearch = (userTyped) => {
+    this.setState({
+      search: userTyped
+    })
+  }
   render() {
+    //when i call filteredTrans on line 49 all of my transactions go away? 
+    let filteredTrans = this.state.transactions.filter((transObj) => {
+      return transObj.description.includes(this.state.changeSearch)
+    })
     return (
       <div>
-        <Search />
-        {/* sending down the lobster trap to form so they can send back the input which updates state*/}
+        <Search search={this.state.search} />
+        {/* sending down the lobster trap to form so they can send back the input which updates state in parent*/}
         <AddTransactionForm addedTransaction={this.addedTransaction}/>
         {/* sending the props to transactionList  */}
         <TransactionsList transactions={this.state.transactions}/>
