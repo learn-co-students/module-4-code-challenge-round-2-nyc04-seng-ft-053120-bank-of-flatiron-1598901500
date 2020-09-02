@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Transaction from "./Transaction";
 
-const TransactionsList = () => {
+const TransactionsList = (props) => {
+
+  const [transactions, setTransactions] = useState([]);
+
+  useEffect(() => {
+    console.log(transactions)
+    fetchTransactions()
+  }, []);
+
+  const fetchTransactions = () => {
+    fetch("http://localhost:6001/transactions")
+      .then(res => res.json())
+      .then(transactionArray => {
+        console.log(transactionArray)
+        setTransactions(transactionArray)
+      })
+  }
+
+  const renderTransactions = () => {
+    return transactions.map(transaction => {
+      return <Transaction key={transaction.id} transaction={transaction} />
+    })
+  }
+
   return (
+
     <table className="ui celled striped padded table">
       <tbody>
         <tr>
@@ -19,7 +43,7 @@ const TransactionsList = () => {
             <h3 className="ui center aligned header">Amount</h3>
           </th>
         </tr>
-        {/* render Transactions here */}
+        {renderTransactions()}
       </tbody>
     </table>
   );
