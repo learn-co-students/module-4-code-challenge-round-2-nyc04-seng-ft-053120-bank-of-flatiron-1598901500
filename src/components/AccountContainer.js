@@ -30,19 +30,15 @@ class AccountContainer extends Component {
   }
   
   updateSearch = (searchTerm) => {
-    console.log("you made it back to A.C")
     this.setState({
       searchValue: searchTerm
     })
   }
   
 
-   filteredArray = () => {
-    this.state.transactions.filter((tran) => {
-       console.log(tran)
-    }
-    )
-   }
+  
+
+  
    
    
    
@@ -50,8 +46,10 @@ class AccountContainer extends Component {
   
   
   render() {
-  
-  //  console.log("from the A.C ", this.state)
+    let filteredArray = this.state.transactions.filter((tran) => {
+      return tran.description.toLowerCase().includes(this.state.searchValue)
+   })
+
     return (
       <div>
         <Search 
@@ -61,7 +59,7 @@ class AccountContainer extends Component {
 
         <AddTransactionForm newTran={this.updateStatetrans}/>
 
-        <TransactionsList transactions={this.state.transactions}/>
+        <TransactionsList transactions={filteredArray}/>
       </div>
     );
   }
