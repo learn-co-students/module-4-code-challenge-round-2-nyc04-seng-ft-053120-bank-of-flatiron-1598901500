@@ -32,7 +32,6 @@ class TransactionsList extends React.Component {
       </table>
     );
   };
-
   }
 
 export default TransactionsList;
