@@ -22,7 +22,6 @@ class AddTransactionForm extends Component {
       category: event.target.category.value,
       amount: event.target.amount.value
     }
-    console.log(formData)
 
     const options = {
       method: "POST",
@@ -35,7 +34,6 @@ class AddTransactionForm extends Component {
     fetch("http://localhost:6001/transactions", options)
       .then(res => res.json())
       .then(newTransaction => {
-        console.log(newTransaction)
         this.props.addTransaction(newTransaction)
       })
   }

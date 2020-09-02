@@ -104,6 +104,20 @@
       "category": "feel right",
       "amount": "44",
       "id": 15
+    },
+    {
+      "date": "2020-10-06",
+      "description": "looks like this works!",
+      "category": "Flatiron",
+      "amount": "100",
+      "id": 16
+    },
+    {
+      "date": "",
+      "description": "",
+      "category": "Income",
+      "amount": "0",
+      "id": 17
     }
   ]
 }
