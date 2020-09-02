@@ -35,13 +35,11 @@ class AccountContainer extends Component {
     })
   }
   
-
-  
-
-  
-   
-   
-   
+  removeTransaction = (id) => {
+    console.log("youve made it back to A.C")
+    let newTrans = this.state.transactions.filter(tran => tran.id !== id)
+    this.setState({transactions: newTrans})
+  }
   
   
   
@@ -59,7 +57,7 @@ class AccountContainer extends Component {
 
         <AddTransactionForm newTran={this.updateStatetrans}/>
 
-        <TransactionsList transactions={filteredArray}/>
+        <TransactionsList removeTran={this.removeTransaction}transactions={filteredArray}/>
       </div>
     );
   }
