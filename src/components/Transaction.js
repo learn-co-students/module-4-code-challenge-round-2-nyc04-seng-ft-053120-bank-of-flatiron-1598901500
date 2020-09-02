@@ -1,12 +1,16 @@
 import React from "react";
 
-const Transaction = () => {
+const Transaction = (props) => {
+  
+  const {amount, category, date, description} = props.tranObj
+
   return (
+    // going from left to right date/ description category and amount
     <tr>
-      <td>{"your code here..."}</td>
-      <td>{"your code here..."}</td>
-      <td>{"your code here..."}</td>
-      <td>{"your code here..."}</td>
+      <td>{amount}</td>
+      <td>{description}</td>
+      <td>{category}</td>
+      <td>{amount}</td>
     </tr>
   );
 };
