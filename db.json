@@ -83,6 +83,167 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "date": "",
+      "description": "",
+      "category": "",
+      "amount": "",
+      "id": 13
+    },
+    {
+      "date": "",
+      "description": "",
+      "category": "",
+      "amount": "",
+      "id": 14
+    },
+    {
+      "date": "",
+      "description": "",
+      "category": "",
+      "amount": "",
+      "id": 15
+    },
+    {
+      "date": "",
+      "description": "",
+      "category": "",
+      "amount": "",
+      "id": 16
+    },
+    {
+      "date": "",
+      "description": "",
+      "category": "",
+      "amount": "",
+      "id": 17
+    },
+    {
+      "date": "",
+      "description": "",
+      "category": "",
+      "amount": "",
+      "id": 18
+    },
+    {
+      "date": "",
+      "description": "",
+      "category": "",
+      "amount": "",
+      "id": 19
+    },
+    {
+      "date": "",
+      "description": "",
+      "category": "",
+      "amount": "",
+      "id": 20
+    },
+    {
+      "date": "",
+      "description": "",
+      "category": "",
+      "amount": "",
+      "id": 21
+    },
+    {
+      "date": "",
+      "description": "",
+      "category": "",
+      "amount": "",
+      "id": 22
+    },
+    {
+      "date": "",
+      "description": "Unemployment ",
+      "category": "Income",
+      "amount": "1000",
+      "id": 23
+    },
+    {
+      "date": "",
+      "description": "Unemployment ",
+      "category": "Income",
+      "amount": "1000",
+      "id": 24
+    },
+    {
+      "date": "2020-09-03",
+      "description": "Unemployment ",
+      "category": "Income",
+      "amount": "1000",
+      "id": 25
+    },
+    {
+      "date": "2020-09-03",
+      "description": "Unemployment ",
+      "category": "Income",
+      "amount": "1000",
+      "id": 26
+    },
+    {
+      "date": "2020-09-02",
+      "description": "Unemployment ",
+      "category": "Income",
+      "amount": "1000",
+      "id": 27
+    },
+    {
+      "date": "2020-09-02",
+      "description": "Unemployment ",
+      "category": "Income",
+      "amount": "1000",
+      "id": 28
+    },
+    {
+      "date": "2020-09-04",
+      "description": "1",
+      "category": "Income",
+      "amount": "1",
+      "id": 29
+    },
+    {
+      "date": "2020-09-04",
+      "description": "1",
+      "category": "Income",
+      "amount": "1",
+      "id": 30
+    },
+    {
+      "date": "2020-09-04",
+      "description": "1",
+      "category": "Income",
+      "amount": "1",
+      "id": 31
+    },
+    {
+      "date": "2020-09-04",
+      "description": "1",
+      "category": "Income",
+      "amount": "1",
+      "id": 32
+    },
+    {
+      "date": "2020-09-04",
+      "description": "1",
+      "category": "Income",
+      "amount": "1",
+      "id": 33
+    },
+    {
+      "date": "2020-09-04",
+      "description": "1",
+      "category": "Income",
+      "amount": "1",
+      "id": 34
+    },
+    {
+      "date": "2020-09-04",
+      "description": "1",
+      "category": "Income",
+      "amount": "1",
+      "id": 35
     }
   ]
 }
