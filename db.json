@@ -132,6 +132,13 @@
       "category": "Shopping",
       "amount": "4500.99",
       "id": 19
+    },
+    {
+      "date": "2020-09-13",
+      "description": "macdonalds",
+      "category": "Food",
+      "amount": "23.45",
+      "id": 20
     }
   ]
 }
