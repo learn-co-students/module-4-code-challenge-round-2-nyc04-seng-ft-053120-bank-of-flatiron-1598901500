@@ -4,7 +4,7 @@ import Transaction from "./Transaction";
 const TransactionsList = (props) => {
  
   const renderTransactions = () => {
-    return props.transactions.map(t => <Transaction transaction = {t}/>)
+    return props.transactions.map(t => <Transaction key={t.id} transaction = {t}/>)
   }
 
   return (

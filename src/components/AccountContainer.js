@@ -21,11 +21,20 @@ class AccountContainer extends Component {
     })
   }
 
+ updateTransaction =(transaction)=> {
+
+   let newArray = [...this.state.transactions, transaction]
+    this.setState({
+      transactions: newArray
+    })
+ } 
+
   render() {
+    console.log(this.state.transactions)
     return (
       <div>
         <Search />
-        <AddTransactionForm />
+        <AddTransactionForm updateTransaction={this.updateTransaction}/>
         <TransactionsList transactions={this.state.transactions} />
       </div>
     );

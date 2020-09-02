@@ -83,6 +83,67 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "id": 13
+    },
+    {
+      "id": 14
+    },
+    {
+      "id": 15
+    },
+    {
+      "id": 16
+    },
+    {
+      "date": "2020-09-03",
+      "description": "jnsfnfsjnsf",
+      "category": "transportation",
+      "amount": "0.09",
+      "id": 17
+    },
+    {
+      "date": "2020-09-12",
+      "description": "Diamond Ring",
+      "category": "jewelry",
+      "amount": "20",
+      "id": 18
+    },
+    {
+      "date": "2020-09-10",
+      "description": "new phone",
+      "category": "personal",
+      "amount": "0.01",
+      "id": 19
+    },
+    {
+      "date": "2020-09-12",
+      "description": "hello",
+      "category": "hello",
+      "amount": "0.05",
+      "id": 20
+    },
+    {
+      "date": "2020-09-04",
+      "description": "hola",
+      "category": "hola",
+      "amount": "0.01",
+      "id": 21
+    },
+    {
+      "date": "2020-09-04",
+      "description": "e",
+      "category": "e",
+      "amount": "-0.01",
+      "id": 22
+    },
+    {
+      "date": "2020-09-05",
+      "description": "a",
+      "category": "a",
+      "amount": "0.01",
+      "id": 23
     }
   ]
 }
