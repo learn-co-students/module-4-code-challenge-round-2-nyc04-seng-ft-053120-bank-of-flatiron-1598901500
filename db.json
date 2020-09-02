@@ -83,6 +83,55 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "date": "2020-09-03",
+      "description": "",
+      "category": "",
+      "amount": "",
+      "id": 13
+    },
+    {
+      "date": "",
+      "description": "",
+      "category": "",
+      "amount": "",
+      "id": 14
+    },
+    {
+      "date": "",
+      "description": "",
+      "category": "",
+      "amount": "",
+      "id": 15
+    },
+    {
+      "date": "2020-09-03",
+      "description": "",
+      "category": "",
+      "amount": "",
+      "id": 16
+    },
+    {
+      "date": "2020-09-09",
+      "description": "bubbble tea",
+      "category": "Food",
+      "amount": "12.32",
+      "id": 17
+    },
+    {
+      "date": "2020-09-10",
+      "description": "dior",
+      "category": "Shopping",
+      "amount": "2300.00",
+      "id": 18
+    },
+    {
+      "date": "2020-09-05",
+      "description": "chanel",
+      "category": "Shopping",
+      "amount": "4500.99",
+      "id": 19
     }
   ]
 }
