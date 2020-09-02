@@ -4,13 +4,14 @@ class Transaction extends React.Component {
 
   render() {
     // console.log(this.props.transaction)
-    
+    const{date, description, category, amount} = this.props.transaction
+
     return (
       <tr>
-        <td>{"your code here..."}</td>
-        <td>{"your code here..."}</td>
-        <td>{"your code here..."}</td>
-        <td>{"your code here..."}</td>
+        <td>{date}</td>
+        <td>{description}</td>
+        <td>{category}</td>
+        <td>{amount}</td>
       </tr>
     );
   };
