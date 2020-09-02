@@ -5,7 +5,8 @@ import AddTransactionForm from "./AddTransactionForm";
 
 class AccountContainer extends Component {
   state = {
-    transactions: []
+    transactions: [],
+    searchTerm: ""
   }
 
   // FETCH TRANSACTIONS
@@ -30,14 +31,26 @@ class AccountContainer extends Component {
     })
   }
 
+  // HANDLE SEARCH TO UPDATE STATE
+  handleSearch = (searchInput) => {
+    // console.log("FROM CONTAINER", searchInput)
+    this.setState({
+      searchTerm: searchInput
+    })
+  }
+
   render() {
     // console.log(this.state.transactions)
-    // const transactionsArray = 
+    // FILTER TRANSACTIONS BASED ON SEARCH INPUT
+    const filteredTransactions = this.state.transactions.filter((trans) => {
+      return trans.description.toLowerCase().includes(this.state.searchTerm.toLocaleLowerCase())
+    })
+
     return (
       <div>
-        <Search />
+        <Search handleSearch={this.handleSearch}/>
         <AddTransactionForm addTransaction={this.addTransaction}/>
-        <TransactionsList transactions={this.state.transactions}/>
+        <TransactionsList transactions={filteredTransactions}/>
       </div>
     );
   }

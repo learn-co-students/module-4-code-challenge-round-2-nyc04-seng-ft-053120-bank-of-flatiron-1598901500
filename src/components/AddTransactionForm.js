@@ -44,7 +44,6 @@ class AddTransactionForm extends Component {
   }
 
   render() {
-    console.log(this.state.value)
     return (
       <div className="ui segment">
         <form className="ui form" onSubmit={this.handleSubmit}>
