@@ -83,6 +83,270 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "date": [
+        "2020-09-04"
+      ],
+      "description": [
+        "d"
+      ],
+      "category": [
+        "d"
+      ],
+      "amount": "",
+      "id": 13
+    },
+    {
+      "date": [
+        "2020-09-04"
+      ],
+      "description": [
+        "d"
+      ],
+      "category": [
+        "d"
+      ],
+      "amount": "",
+      "id": 14
+    },
+    {
+      "date": [
+        "2020-09-04"
+      ],
+      "description": [
+        "d"
+      ],
+      "category": [
+        "d"
+      ],
+      "amount": "",
+      "id": 15
+    },
+    {
+      "date": [
+        "2020-09-04"
+      ],
+      "description": [
+        "d"
+      ],
+      "category": [
+        "d"
+      ],
+      "amount": [
+        "200"
+      ],
+      "id": 16
+    },
+    {
+      "date": [
+        "2020-09-04"
+      ],
+      "description": [
+        "d"
+      ],
+      "category": [
+        "d"
+      ],
+      "amount": [
+        "200"
+      ],
+      "id": 17
+    },
+    {
+      "date": [
+        "2020-09-04"
+      ],
+      "description": [
+        "d"
+      ],
+      "category": [
+        "d"
+      ],
+      "amount": [
+        "200"
+      ],
+      "id": 18
+    },
+    {
+      "date": [
+        "2020-09-04"
+      ],
+      "description": [
+        "d"
+      ],
+      "category": [
+        "d"
+      ],
+      "amount": [
+        "200"
+      ],
+      "id": 19
+    },
+    {
+      "date": [
+        "2020-09-04"
+      ],
+      "description": [
+        "d"
+      ],
+      "category": [
+        "d"
+      ],
+      "amount": [
+        "200"
+      ],
+      "id": 20
+    },
+    {
+      "date": [
+        "2020-09-04"
+      ],
+      "description": [
+        "d"
+      ],
+      "category": [
+        "d"
+      ],
+      "amount": [
+        "200"
+      ],
+      "id": 21
+    },
+    {
+      "date": [
+        "2020-09-04"
+      ],
+      "description": [
+        "d"
+      ],
+      "category": [
+        "d"
+      ],
+      "amount": [
+        "200"
+      ],
+      "id": 22
+    },
+    {
+      "date": [
+        "2020-09-10"
+      ],
+      "description": [
+        "trial"
+      ],
+      "category": [
+        "trial"
+      ],
+      "amount": [
+        "200"
+      ],
+      "id": 23
+    },
+    {
+      "date": "",
+      "description": "",
+      "category": "",
+      "amount": "",
+      "id": 24
+    },
+    {
+      "date": "",
+      "description": "",
+      "category": [
+        "ere"
+      ],
+      "amount": "",
+      "id": 25
+    },
+    {
+      "date": "",
+      "description": "",
+      "category": [
+        "ere"
+      ],
+      "amount": "",
+      "id": 26
+    },
+    {
+      "date": "",
+      "description": [
+        "wewe"
+      ],
+      "category": [
+        "ere"
+      ],
+      "amount": "",
+      "id": 27
+    },
+    {
+      "date": "",
+      "description": [
+        "wewe"
+      ],
+      "category": [
+        "ere"
+      ],
+      "amount": "",
+      "id": 28
+    },
+    {
+      "date": "",
+      "description": [
+        "22"
+      ],
+      "category": [
+        "Morning meditation"
+      ],
+      "amount": [
+        "200"
+      ],
+      "id": 29
+    },
+    {
+      "date": [
+        "2020-09-04"
+      ],
+      "description": [
+        "22"
+      ],
+      "category": [
+        "Morning meditation"
+      ],
+      "amount": [
+        "200"
+      ],
+      "id": 30
+    },
+    {
+      "date": [
+        "2020-09-04"
+      ],
+      "description": [
+        "22"
+      ],
+      "category": [
+        "Morning meditation"
+      ],
+      "amount": [
+        "200"
+      ],
+      "id": 31
+    },
+    {
+      "date": [
+        "2020-09-04"
+      ],
+      "description": [
+        "22"
+      ],
+      "category": [
+        "Morning meditation"
+      ],
+      "amount": [
+        "200"
+      ],
+      "id": 32
     }
   ]
 }
