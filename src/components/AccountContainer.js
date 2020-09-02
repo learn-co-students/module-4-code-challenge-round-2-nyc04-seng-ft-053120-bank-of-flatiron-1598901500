@@ -22,20 +22,33 @@ class AccountContainer extends Component {
   }
 
  updateTransaction =(transaction)=> {
-
    let newArray = [...this.state.transactions, transaction]
     this.setState({
       transactions: newArray
     })
  } 
 
+ handleSearch = (evt) => {
+  this.setState ({
+    searchTerm: evt.target.value 
+  })
+ }
+
+renderTransactions = () => {
+  return this.state.transactions.filter((t) => {
+    return t.description.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+  })
+}
+
+
   render() {
-    console.log(this.state.transactions)
+    console.log(this.renderTransactions())
+
     return (
       <div>
-        <Search />
+        <Search handleSearch={this.handleSearch} search={this.state.searchTerm}/>
         <AddTransactionForm updateTransaction={this.updateTransaction}/>
-        <TransactionsList transactions={this.state.transactions} />
+        <TransactionsList transactions={this.renderTransactions()} />
       </div>
     );
   }
