@@ -118,6 +118,27 @@
       "category": "Income",
       "amount": "0",
       "id": 17
+    },
+    {
+      "date": "",
+      "description": "",
+      "category": "Income",
+      "amount": "0",
+      "id": 18
+    },
+    {
+      "date": "",
+      "description": "",
+      "category": "Income",
+      "amount": "0",
+      "id": 19
+    },
+    {
+      "date": "",
+      "description": "",
+      "category": "Income",
+      "amount": "0",
+      "id": 20
     }
   ]
 }
