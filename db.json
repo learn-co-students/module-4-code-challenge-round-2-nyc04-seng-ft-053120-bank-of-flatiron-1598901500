@@ -83,6 +83,90 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "date": "2020-08-13",
+      "description": "hello",
+      "category": "i dunoo",
+      "amount": "7000",
+      "id": 13
+    },
+    {
+      "date": "2020-07-09",
+      "description": "big bag of money",
+      "category": "money bag",
+      "amount": "30000000",
+      "id": 14
+    },
+    {
+      "date": "2020-07-02",
+      "description": "HELLO WORLD",
+      "category": "HELLO WORLD",
+      "amount": "01000000",
+      "id": 15
+    },
+    {
+      "date": "2020-07-02",
+      "description": "HELLO WORLD",
+      "category": "HELLO WORLD",
+      "amount": "01000000",
+      "id": 16
+    },
+    {
+      "date": "2020-07-02",
+      "description": "HELLO WORLD",
+      "category": "HELLO WORLD",
+      "amount": "01000000",
+      "id": 17
+    },
+    {
+      "date": "2020-07-03",
+      "description": "THIS ONE",
+      "category": "THIS ONE",
+      "amount": "0300",
+      "id": 18
+    },
+    {
+      "date": "2020-07-23",
+      "description": "ONETWO",
+      "category": "ONETWO",
+      "amount": "0300",
+      "id": 19
+    },
+    {
+      "date": "2020-08-15",
+      "description": "IDK",
+      "category": "IDK",
+      "amount": "3000",
+      "id": 20
+    },
+    {
+      "date": "2020-07-10",
+      "description": "idk",
+      "category": "idk",
+      "amount": "800",
+      "id": 21
+    },
+    {
+      "date": "2020-07-15",
+      "description": "PLEASE ADD THIS",
+      "category": "PLEASE ADD THIS",
+      "amount": "5000",
+      "id": 22
+    },
+    {
+      "date": "2020-07-02",
+      "description": "hello",
+      "category": "i dunoo",
+      "amount": "1",
+      "id": 23
+    },
+    {
+      "date": "",
+      "description": "",
+      "category": "",
+      "amount": 0,
+      "id": 24
     }
   ]
 }
