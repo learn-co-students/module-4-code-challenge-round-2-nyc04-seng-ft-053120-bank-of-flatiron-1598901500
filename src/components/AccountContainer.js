@@ -40,7 +40,7 @@ class AccountContainer extends Component {
   render() {
     // console.log(this.state)
     let filteredTransactions = this.state.transactions.filter(transaction => {
-      return transaction.description.toLowerCase().includes(this.state.searchTerm.toLocaleLowerCase())
+      return transaction.description.toLowerCase().includes(this.state.searchTerm.toLowerCase())
     })
 
     return (
