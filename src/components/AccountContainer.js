@@ -20,12 +20,21 @@ class AccountContainer extends Component {
     })
   }
 
+  addTransaction = (singleTrans) => {
+    let arrOfTrans = [singleTrans, ...this.state.transactions]
+    this.setState({
+      transactions: arrOfTrans
+    })
+  }
+
   render() {
     //console.log("State of Page:", this.state)
     return (
       <div>
         <Search />
-        <AddTransactionForm />
+        <AddTransactionForm 
+          addTransaction={this.addTransaction}
+        />
         <TransactionsList
           transactions={this.state.transactions}
         />
