@@ -83,6 +83,62 @@
       "description": "Venmo, Pay Roommate for Rent",
       "category": "Housing",
       "amount": -975
+    },
+    {
+      "date": "2020-09-18",
+      "description": "thi is amazing ",
+      "category": "food",
+      "amount": "1123",
+      "id": 22
+    },
+    {
+      "date": "2020-09-25",
+      "description": "so good ",
+      "category": "money",
+      "amount": "123",
+      "id": 23
+    },
+    {
+      "date": "2020-09-12",
+      "description": "this is the final one ",
+      "category": "check",
+      "amount": "200000",
+      "id": 24
+    },
+    {
+      "date": "2020-09-12",
+      "description": "this is the final one ",
+      "category": "check",
+      "amount": "200000",
+      "id": 25
+    },
+    {
+      "date": "2020-09-19",
+      "description": "Still working?? ",
+      "category": "code",
+      "amount": "5000000",
+      "id": 26
+    },
+    {
+      "date": "2020-09-24",
+      "description": "Submitting ",
+      "category": "Final code ",
+      "amount": "2200",
+      "id": 27
+    },
+    {
+      "date": "2020-09-24",
+      "description": "Submitting ",
+      "category": "Final code ",
+      "amount": "2200",
+      "id": 28
+    },
+    {
+      "date": "2020-09-18",
+      "description": "I am done ",
+      "category": "check",
+      "amount": "333",
+      "id": 29
     }
   ]
 }
