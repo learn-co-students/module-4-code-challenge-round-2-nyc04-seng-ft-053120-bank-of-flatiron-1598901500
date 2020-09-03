@@ -4,6 +4,7 @@ import "../stylesheets/App.css";
 
 class App extends Component {
   render() {
+    //console.log("State of Page:", this.state)
     return (
       <div className="ui raised segment">
         <div className="ui segment violet inverted">
