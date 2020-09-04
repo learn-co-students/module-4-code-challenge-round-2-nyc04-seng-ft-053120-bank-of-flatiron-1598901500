@@ -38,17 +38,18 @@ class AddTransactionForm extends Component {
     let {date, description, category, amount} = this.state
     return (
       <div className="ui segment">
-        <form className="ui form" onSubmit={this.handleSubmit} onChange={this.handleInput}>
+        <form className="ui form" onSubmit={this.handleSubmit} >
           <div className="inline fields">
-            <input type="date" name="date" value={date} />
-            <input type="text" name="description" placeholder="Description" value={description}/>
-            <input type="text" name="category" placeholder="Category" value={category}/>
+            <input type="date" name="date" value={date} onChange={this.handleInput}/>
+            <input type="text" name="description" placeholder="Description" value={description} onChange={this.handleInput}/>
+            <input type="text" name="category" placeholder="Category" value={category} onChange={this.handleInput}/>
             <input
               type="number"
               name="amount"
               placeholder="Amount"
               step="0.01"
               value={amount}
+              onChange={this.handleInput}
             />
           </div>
           <button className="ui button" type="submit">
