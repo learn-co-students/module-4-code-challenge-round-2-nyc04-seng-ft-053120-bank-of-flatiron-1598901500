@@ -13,14 +13,14 @@ Part of what this code challenge is testing is your ability to follow given inst
 ## Setup
 
 After cloning down the project:
-
+ 
 1. Run `npm install` in your terminal
 2. Run `npm start`: This will open both your React page on port `6002` and your backend on port `6001`.
 3. The app uses [Semantic UI](https://semantic-ui.com/) for styling. If you see any unfamiliar classNames on some components, don't sweat! That's coming from Semantic UI and you shouldn't need to touch it.
 4. If you are unfamiliar with HTML tables, take a look at the [docs with an example here](https://www.w3schools.com/html/html_tables.asp)
-
+ 
 ## Endpoints
-
+ 
 The base URL for your backend is: `http://localhost:6001`
 
 These are the endpoints you might need:
